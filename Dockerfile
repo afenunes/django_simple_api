@@ -29,7 +29,7 @@ RUN apt-get update \
     wget \
   # Cleaning cache:
   && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
-  && pip install "poetry==$POETRY_VERSION" && poetry --version
+  && pip install --no-cache-dir "poetry==$POETRY_VERSION" && poetry --version
 
 # set work directory
 WORKDIR /app
