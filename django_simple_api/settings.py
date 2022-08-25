@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-uokuo4b1n=sizg1$io@6g55tb8(0vqc9br6)(zlp_%9-*v1w5h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# TODO: This will have to be properly configured for prod environment so it only acepts frontend's calls
 ALLOWED_HOSTS = ['0.0.0.0']
 
 
