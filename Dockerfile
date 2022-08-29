@@ -13,7 +13,7 @@ ENV DJANGO_ENV=${DJANGO_ENV} \
   PIP_DISABLE_PIP_VERSION_CHECK=on \
   PIP_DEFAULT_TIMEOUT=100 \
   # poetry:
-  POETRY_VERSION=1.0.5 \
+  POETRY_VERSION=1.1.4 \
   POETRY_VIRTUALENVS_CREATE=false \
   POETRY_CACHE_DIR='/var/cache/pypoetry'
 
@@ -29,8 +29,7 @@ RUN apt-get update \
     wget \
   # Cleaning cache:
   && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
-  && pip install --no-cache-dir "poetry==$POETRY_VERSION" && poetry --version \
-  && pip install psycopg2
+  && pip install --no-cache-dir "poetry==$POETRY_VERSION" && poetry --version
 
 # set work directory
 WORKDIR /app
