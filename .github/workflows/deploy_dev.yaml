@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  health-check-job:
+  health-check:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -71,6 +71,7 @@ jobs:
         run: python manage.py test
 
   build-and-publish:
+    needs: health-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
