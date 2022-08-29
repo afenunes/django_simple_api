@@ -33,6 +33,9 @@ RUN apt-get update \
 
 # set work directory
 WORKDIR /app
+
+ADD VERSION .
+
 COPY pyproject.toml poetry.lock /app/
 
 # Install dependencies:

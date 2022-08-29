@@ -75,6 +75,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set variables
+        run: |
+          VER=$(cat VERSION)
+          echo "VERSION=$VER" >> $GITHUB_ENV
+          echo $VER
       - name: docker login
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -85,8 +90,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{secrets.DOCKER_USER}}/django_simple_api:latest
-#      - name: Build the Docker image
-#        run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/django_simple_api:$(date +%s)
-#      - name: Docker Push
-#        run: docker push ${{secrets.DOCKER_USER}}/django_simple_api
+          tags: ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_REPO}}:${{ env.VERSION }}
