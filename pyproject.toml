@@ -7,8 +7,11 @@ authors = ["Andre Nunes <afenunes@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.1"
+pycodestyle = "^2.9.1"
+psycopg2 = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
+psycopg2-binary = "^2.9.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
