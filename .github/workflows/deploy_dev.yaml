@@ -80,6 +80,10 @@ jobs:
           VER=$(cat VERSION)
           echo "VERSION=$VER" >> $GITHUB_ENV
           echo $VER
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{env.VERSION}}
+          message: ${{env.VERSION}} tagged
       - name: docker login
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
