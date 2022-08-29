@@ -78,7 +78,8 @@ if os.getenv('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            # 'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': 'postgresdb',
             'USER': 'postgres',
             'PASSWORD': 'postgres',
             'HOST': 'localhost',
