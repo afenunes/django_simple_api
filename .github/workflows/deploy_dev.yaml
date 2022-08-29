@@ -34,8 +34,8 @@ jobs:
           python-version: '3.x'
       - name: Check Python version
         run: python --version
-      - name: Install Poetry
-          uses: dschep/install-poetry-action@v1.2
+      - name: Install poetry
+        run: pip install --no-cache-dir "poetry==1.1.4" && poetry --version
       - name: Cache Poetry virtualenv
         uses: actions/cache@v1
         id: cache
