@@ -90,4 +90,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_REPO}}:${{ env.VERSION }}
+          tags: ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_REPO}}:${{env.VERSION}}
